@@ -1,277 +1,253 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Call to Close Iranian Regime Embassies – Support the People of Iran</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.92)),
-                  url('https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Iran_%281925-1979%2C_vertical%29.svg') center/cover no-repeat fixed;
-      color: #111;
-      min-height: 100vh;
-      background-attachment: fixed;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.92);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    }
-    h1 {
-      color: #c0392b;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      text-align: center;
-      color: #444;
-      font-size: 1.1em;
-      margin-bottom: 30px;
-    }
-    .intro {
-      background: #fefefe;
-      padding: 20px;
-      border-left: 5px solid #c0392b;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-    .controls {
-      text-align: center;
-      margin: 20px 0;
-    }
-    button {
-      background: #c0392b;
-      color: white;
-      border: none;
-      padding: 14px 32px;
-      font-size: 1.2em;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 10px;
-      transition: background 0.2s;
-    }
-    button:hover { background: #a93226; }
-    button.secondary { background: #3498db; }
-    button.secondary:hover { background: #2980b9; }
-    .countries {
-      columns: 2;
-      column-gap: 40px;
-      margin-bottom: 40px;
-    }
-    .country-group {
-      break-inside: avoid;
-      margin-bottom: 20px;
-    }
-    .country-group strong {
-      display: block;
-      font-size: 1.1em;
-      margin: 12px 0 6px;
-      color: #222;
-    }
-    label {
-      display: block;
-      margin: 6px 0;
-      cursor: pointer;
-      font-size: 0.98em;
-    }
-    #email-list {
-      background: #f8f9fa;
-      padding: 16px;
-      border-radius: 8px;
-      margin-top: 30px;
-      white-space: pre-wrap;
-      word-break: break-all;
-      font-family: monospace;
-      font-size: 0.95em;
-      border: 1px solid #ddd;
-    }
-    .note {
-      font-size: 0.92em;
-      color: #555;
-      margin-top: 40px;
-      line-height: 1.6;
-    }
-    @media (max-width: 768px) {
-      .countries { columns: 1; }
-      .container { padding: 20px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Iran 2026 - Contact International Foreign Ministries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Iran_%281964%E2%80%931980%29.svg/1920px-Flag_of_Iran_%281964%E2%80%931980%29.svg.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            opacity: 0.95;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        h1 {
+            text-align: center;
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+        p.center {
+            text-align: center;
+            margin: 10px 0 20px;
+        }
+        .telegram-note {
+            background-color: #fffde7;
+            border: 1px solid #fff59d;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 8px 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+        button.send {
+            background-color: #388e3c;
+            font-weight: bold;
+        }
+        button.send:hover {
+            background-color: #2e7d32;
+        }
+        #email-body {
+            background-color: #fafafa;
+            padding: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            display: none;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        h2 {
+            color: #1565c0;
+            margin: 35px 0 10px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #1976d2;
+            font-size: 22px;
+        }
+        .checkbox-group {
+            column-count: 3;
+            column-gap: 35px;
+            margin-bottom: 30px;
+        }
+        .checkbox-item {
+            break-inside: avoid;
+            margin: 12px 0;
+            display: block;
+        }
+        .checkbox-item input {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .checkbox-item label {
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        .checkbox-item:hover {
+            background-color: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        @media (max-width: 900px) {
+            .checkbox-group {
+                column-count: 2;
+            }
+        }
+        @media (max-width: 600px) {
+            .checkbox-group {
+                column-count: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-    <h1>Support the Iranian People's Demand</h1>
-    <div class="subtitle">Call on European governments to close regime embassies and end diplomatic recognition</div>
-
-    <div class="intro">
-      <p><strong>Purpose:</strong> Following the massive global rallies on February 14th (centered in Toronto, Munich, Los Angeles), millions of Iranians have clearly rejected the Islamic Republic as their legitimate government.</p>
-      <p>Use this page to easily send the message below to foreign ministries and officials — directly from <strong>your own email account</strong>.</p>
-    </div>
-
-    <div class="controls">
-      <button onclick="selectAll(true)">Select All Countries</button>
-      <button onclick="selectAll(false)">Deselect All</button>
-      <button class="secondary" onclick="copyEmails()">📋 Copy Selected Emails</button>
-    </div>
-
-    <form id="campaign-form">
-      <div class="countries">
-
-        <div class="country-group">
-          <strong>Belgium</strong>
-          <label><input type="checkbox" class="country" data-emails="florinda.baleci@diplobel.fed.be,pierre.steverlynck@diplobel.fed.be,info@diplobel.fed.be"> Belgium (all)</label>
+    <div class="container">
+        <h1>Free Iran 2026: Urge Reassessment of Diplomatic Recognition</h1>
+        <p class="center">Select the countries you want, then click "Send to Selected" to open one email addressed to all chosen foreign ministries.</p>
+        
+        <div class="telegram-note">
+            <strong>Note for Telegram/Android users:</strong> If the email link doesn't open properly in Telegram's in-app browser, tap the three dots menu at the top of the address bar and select "Open in..." → Chrome (or your default browser).
         </div>
-
-        <div class="country-group">
-          <strong>France</strong>
-          <label><input type="checkbox" class="country" data-emails="communication@senat.fr,aposce@assemblee-nationale.fr,presse@diplomatie.gouv.fr"> France (all)</label>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <button onclick="selectAll()">Select All</button>
+            <button onclick="deselectAll()">Deselect All</button>
+            <button onclick="toggleEmailBody()">Copy Email Template</button>
+            <br><br>
+            <button class="send" onclick="sendToSelected()">Send to Selected</button>
         </div>
+        
+        <div id="email-body">
+Subject: Formal Request to Reconsider Diplomatic Recognition of the Islamic Republic of Iran
 
-        <div class="country-group">
-          <strong>Netherlands</strong>
-          <label><input type="checkbox" class="country" data-emails="dpg@minbuza.nl,avg-verzoeken@minbuza.nl,persvragen@minbuza.nl"> Netherlands (all)</label>
-        </div>
+Dear Sir or Madam,
 
-        <div class="country-group">
-          <strong>Spain</strong>
-          <label><input type="checkbox" class="country" data-emails="prensa@maec.es,dg.cdpr@maec.es"> Spain (all)</label>
-        </div>
+We write to draw your attention to the repeatedly and unequivocally expressed will of millions of Iranians, both inside and outside the country: the Islamic Republic of Iran is not regarded by a substantial portion of the population as a legitimate representative government.
 
-        <div class="country-group">
-          <strong>Sweden</strong>
-          <label><input type="checkbox" class="country" data-emails="forvaltningsavdelningen.registrator@gov.se,ud.rt@gov.se"> Sweden (all)</label>
-        </div>
+On January 8–9, 2026, credible reports indicate that Iranian security forces used lethal force against civilians nationwide, resulting in mass casualties. Tens of thousands were reportedly arrested, with widespread allegations of torture and coerced confessions. These events represent not isolated incidents but the continuation of a long-standing pattern of systemic repression.
 
-        <div class="country-group">
-          <strong>United Kingdom</strong>
-          <label><input type="checkbox" class="country" data-emails="fcdo.correspondence@fcdo.gov.uk"> United Kingdom</label>
-        </div>
+When a government employ sustained and large-scale violence against its own population, suppresses peaceful assembly, and relies on coercion to maintain power, it fundamentally undermines the basis of political legitimacy. Under such circumstances, continued diplomatic normalization warrants serious reconsideration.
 
-        <div class="country-group">
-          <strong>Italy</strong>
-          <label><input type="checkbox" class="country" data-emails="stampa@esteri.it,info@esteri.it"> Italy (all)</label>
-        </div>
+On February 14, large-scale demonstrations took place in major global cities, including Toronto, Munich, and Los Angeles. These coordinated rallies reflected a unified demand from the Iranian diaspora for democratic transition and the withdrawal of international legitimacy from the current ruling structure.
 
-        <div class="country-group">
-          <strong>Austria</strong>
-          <label><input type="checkbox" class="country" data-emails="info@bmeia.gv.at,abti3@bmeia.gv.at"> Austria (all)</label>
-        </div>
+The growing international scrutiny of the Islamic Revolutionary Guard Corps (IRGC), including terrorist designations in multiple jurisdictions, further underscores the gravity of the regime’s conduct. Diplomatic developments—such as the exclusion of senior regime representatives from high-level forums and the engagement of alternative Iranian political figures—reflect an emerging recognition of political realities on the ground.
 
-        <div class="country-group">
-          <strong>Germany</strong>
-          <label><input type="checkbox" class="country" data-emails="buergerservice@auswaertiges-amt.de"> Germany</label>
-        </div>
+Decades of diplomatic engagement have not halted executions, arbitrary detention, enforced disappearances, or violent suppression of dissent. Continued diplomatic recognition risks conferring political legitimacy on a system that governs through repression.
 
-        <!-- Add the remaining countries here following the same pattern -->
-        <!-- Example: -->
-        <div class="country-group">
-          <strong>Poland</strong>
-          <label><input type="checkbox" class="country" data-emails="petycje.skargi.wnioski@msz.gov.pl,info@msz.gov.pl"> Poland (all)</label>
-        </div>
+We therefore respectfully call upon your government and relevant institutions to:
+1. Reassess diplomatic recognition of the Islamic Republic of Iran considering ongoing human rights violations.
+2. Consider the closure or suspension of Iranian diplomatic missions pending demonstrable adherence to international human rights obligations.
+3. Align diplomatic policy with the expressed demands of the Iranian people for democratic representation and accountability.
 
-        <!-- Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, Greece, Hungary, Ireland, Latvia, Lithuania, Luxembourg, Malta, Portugal, Romania, Slovakia, Slovenia ... -->
+This matter is not symbolic. It concerns the credibility of international commitments to human rights, democratic principles, and the protection of civilian populations.
 
-      </div>
-
-      <button type="button" onclick="openEmail()">🚀 Open Email App – Send Now</button>
-    </form>
-
-    <div id="email-list">
-      <strong>Selected recipients (for manual copy-paste if needed):</strong><br>
-      <span id="selected-emails">None selected yet.</span>
-    </div>
-
-    <div class="note">
-      <p><strong>Notes & Tips:</strong></p>
-      <ul>
-        <li>The email opens in your default mail app (Outlook, Mail, Thunderbird, web Gmail, etc.) with pre-filled To / Subject / Body.</li>
-        <li>If too many addresses cause issues → use the "Copy Selected Emails" button and paste them into BCC field manually.</li>
-        <li>You can edit/personalize the message before sending.</li>
-        <li>Background: Lion and Sun flag (historic Iranian emblem) – public domain via Wikimedia Commons.</li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    const SUBJECT = "Call to Close Iranian Regime Embassies Following Global Iranian Rallies On Feb 14th";
-
-    const BODY = `Dear Sir or Madam,
-
-This letter is written in reference to the clearly and repeatedly expressed will of millions of Iranians inside and outside the country: THE ISLAMIC REPUBLIC IS NOT RECOGNIZED AS A LEGITIMATE GOVERNMENT.
-
-On February 14, massive rallies were held across major cities around the world, centered in Toronto, Munich, and Los Angeles, where millions of people gathered in unified demonstrations. In these unprecedented global protests, participants spoke with one voice and explicitly demanded the overthrow of the terrorist regime ruling Iran and the end of its international legitimacy.
-
-The international designation of the Islamic Revolutionary Guard Corps, IRGC, as a terrorist organization further reflects the grave nature of this regime and its structure of repression. The cancellation of the invitation to the regime’s representative, Abbas Araghchi, at the Munich conference, and the invitation extended to Prince Reza Pahlavi, widely regarded by protesters as the chosen representative of the people for a transitional period, demonstrate a growing recognition of political reality. The Iranian people do not consider this regime their representative.
-
-Decades of negotiations and diplomatic engagement have failed to stop executions, repression, enforced disappearances, and mass killings. Continued diplomatic recognition only grants legitimacy and political space to a system that governs through violence against its own population.
-
-WE THEREFORE FORMALLY AND UNEQUIVOCALLY CALL ON YOUR GOVERNMENT AND INSTITUTIONS TO IMMEDIATELY CLOSE THE ISLAMIC REPUBLIC’S EMBASSIES AND DIPLOMATIC MISSIONS IN YOUR COUNTRY AND TO RECONSIDER DIPLOMATIC RECOGNITION IN LIGHT OF THE CLEARLY EXPRESSED WILL OF THE IRANIAN PEOPLE.
-
-This is not symbolic. It is a moral and political responsibility.
+We urge careful and principled consideration.
 
 Sincerely,
-The People of Iran`;
+[Your Name]
+[Your Contact Info]
+        </div>
+        
+        <form>
+            <h2>European Countries</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox" id="uk" data-email="fcdo.correspondence@fcdo.gov.uk"><label for="uk">United Kingdom</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="germany" data-email="poststelle@diplo.de"><label for="germany">Germany</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="france" data-email="contact@diplomatie.gouv.fr"><label for="france">France</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="sweden" data-email="ud-info@gov.se"><label for="sweden">Sweden</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="denmark" data-email="um@um.dk"><label for="denmark">Denmark</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="norway" data-email="post@mfa.no"><label for="norway">Norway</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="finland" data-email="kirjaamo.um@gov.fi"><label for="finland">Finland</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="italy" data-email="ministero.affariesteri@cert.esteri.it"><label for="italy">Italy</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="spain" data-email="info@maec.es"><label for="spain">Spain</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="portugal" data-email="secgeral@mne.pt"><label for="portugal">Portugal</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="belarus" data-email="mail@mfa.gov.by"><label for="belarus">Belarus</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="poland" data-email="kontakt@msz.gov.pl"><label for="poland">Poland</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="ukraine" data-email="cons_or@mfa.gov.ua"><label for="ukraine">Ukraine</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="netherlands" data-email="inbox@minbuza.nl"><label for="netherlands">Netherlands</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="austria" data-email="dialogue@bmeia.gv.at"><label for="austria">Austria</label></div>
+            </div>
 
-    const encodedBody = encodeURIComponent(BODY);
+            <h2>Other Countries</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox" id="brazil" data-email="ouvidoria@itamaraty.gov.br"><label for="brazil">Brazil</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="argentina" data-email="seree@cancilleria.gob.ar"><label for="argentina">Argentina</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="chile" data-email="informaciones@minrel.gob.cl"><label for="chile">Chile</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="venezuela" data-email="relaciones.consulares@mppre.gob.ve"><label for="venezuela">Venezuela</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="uruguay" data-email="consultas.web@mrree.gub.uy"><label for="uruguay">Uruguay</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="colombia" data-email="contactenos@cancilleria.gov.co"><label for="colombia">Colombia</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="japan" data-email="publicinfo@mofa.go.jp"><label for="japan">Japan</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="southkorea" data-email="webmaster@mofa.go.kr"><label for="southkorea">South Korea</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="india" data-email="contactus@mea.gov.in"><label for="india">India</label></div>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function getSelectedEmails() {
+            let selected = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                selected.push(cb.getAttribute('data-email'));
+            });
+            return selected;
+        }
 
-    function getSelectedEmails() {
-      const checked = document.querySelectorAll('.country:checked');
-      let emails = [];
-      checked.forEach(cb => {
-        const addrs = cb.getAttribute('data-emails').split(',');
-        emails = emails.concat(addrs.map(e => e.trim()));
-      });
-      return [...new Set(emails)]; // remove duplicates
-    }
+        function getEmailTemplate() {
+            let bodyElement = document.getElementById('email-body');
+            let fullText = bodyElement.innerText || bodyElement.textContent;
+            let lines = fullText.split('\n');
+            let subject = lines[0].replace('Subject: ', '');
+            let body = lines.slice(2).join('\n');
+            return { subject, body };
+        }
 
-    function updateEmailList() {
-      const emails = getSelectedEmails();
-      document.getElementById('selected-emails').textContent = 
-        emails.length > 0 ? emails.join(', ') : 'None selected yet.';
-    }
+        function sendToSelected() {
+            let emails = getSelectedEmails();
+            if (emails.length === 0) {
+                alert('No countries selected. Please check at least one country first.');
+                return;
+            }
+            let template = getEmailTemplate();
+            let toField = emails.join(',');
+            let mailtoLink = 'mailto:' + toField + '?subject=' + encodeURIComponent(template.subject) + '&body=' + encodeURIComponent(template.body);
+            window.open(mailtoLink, '_blank');
+        }
 
-    function selectAll(checked) {
-      document.querySelectorAll('.country').forEach(cb => cb.checked = checked);
-      updateEmailList();
-    }
+        function selectAll() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+        }
 
-    function copyEmails() {
-      const emails = getSelectedEmails().join(', ');
-      if (emails === '') {
-        alert('No emails selected.');
-        return;
-      }
-      navigator.clipboard.writeText(emails).then(() => {
-        alert('Email list copied to clipboard!');
-      }).catch(() => {
-        alert('Copy failed – please select the text manually.');
-      });
-    }
+        function deselectAll() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        }
 
-    function openEmail() {
-      const emails = getSelectedEmails();
-      if (emails.length === 0) {
-        alert('Please select at least one country.');
-        return;
-      }
-      updateEmailList();
-
-      const to = emails.join(',');
-      const mailto = `mailto:${to}?subject=${encodeURIComponent(SUBJECT)}&body=${encodedBody}`;
-      window.location.href = mailto;
-    }
-
-    // Update list when checkboxes change
-    document.querySelectorAll('.country').forEach(cb => {
-      cb.addEventListener('change', updateEmailList);
-    });
-  </script>
-
+        function toggleEmailBody() {
+            let el = document.getElementById('email-body');
+            el.style.display = el.style.display === 'none' ? 'block' : 'none';
+            if (el.style.display === 'block') {
+                let range = document.createRange();
+                range.selectNode(el);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+                alert('Email template copied to clipboard!');
+            }
+        }
+    </script>
 </body>
 </html>
