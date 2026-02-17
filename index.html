@@ -117,7 +117,7 @@
 <body>
     <div class="container">
         <h1>Free Iran 2026: Urge Reassessment of Diplomatic Recognition</h1>
-        <p class="center">Select the countries you want, then click "Send to Selected" to open one email addressed to all chosen foreign ministries.</p>
+        <p class="center">Select the countries you want, then click "Send to Selected" to open one email addressed to all chosen foreign ministries. (Note: Some ministries prefer contact forms—check their site if emails bounce.)</p>
         
         <div class="telegram-note">
             <strong>Note for Telegram/Android users:</strong> If the email link doesn't open properly in Telegram's in-app browser, tap the three dots menu at the top of the address bar and select "Open in..." → Chrome (or your default browser).
@@ -160,6 +160,7 @@ We urge careful and principled consideration.
 Sincerely,
 [Your Name]
 [Your Contact Info]
+Richmond Hill, Ontario, Canada
         </div>
         
         <form>
@@ -167,32 +168,31 @@ Sincerely,
             <div class="checkbox-group">
                 <div class="checkbox-item"><input type="checkbox" id="uk" data-email="fcdo.correspondence@fcdo.gov.uk"><label for="uk">United Kingdom</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="germany" data-email="poststelle@diplo.de"><label for="germany">Germany</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="france" data-email="contact@diplomatie.gouv.fr"><label for="france">France</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="sweden" data-email="ud-info@gov.se"><label for="sweden">Sweden</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="france" data-email="webmestre@diplomatie.gouv.fr"><label for="france">France</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="sweden" data-email="registrator@utrikes.regeringen.se"><label for="sweden">Sweden</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="denmark" data-email="um@um.dk"><label for="denmark">Denmark</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="norway" data-email="post@mfa.no"><label for="norway">Norway</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="finland" data-email="kirjaamo.um@gov.fi"><label for="finland">Finland</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="italy" data-email="ministero.affariesteri@cert.esteri.it"><label for="italy">Italy</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="spain" data-email="info@maec.es"><label for="spain">Spain</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="spain" data-email="informae@maec.es"><label for="spain">Spain</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="portugal" data-email="secgeral@mne.pt"><label for="portugal">Portugal</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="belarus" data-email="mail@mfa.gov.by"><label for="belarus">Belarus</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="poland" data-email="kontakt@msz.gov.pl"><label for="poland">Poland</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="ukraine" data-email="cons_or@mfa.gov.ua"><label for="ukraine">Ukraine</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="netherlands" data-email="inbox@minbuza.nl"><label for="netherlands">Netherlands</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="austria" data-email="dialogue@bmeia.gv.at"><label for="austria">Austria</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="austria" data-email="post@bmeia.gv.at"><label for="austria">Austria</label></div>
             </div>
 
             <h2>Other Countries</h2>
             <div class="checkbox-group">
                 <div class="checkbox-item"><input type="checkbox" id="brazil" data-email="ouvidoria@itamaraty.gov.br"><label for="brazil">Brazil</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="argentina" data-email="seree@cancilleria.gob.ar"><label for="argentina">Argentina</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="chile" data-email="informaciones@minrel.gob.cl"><label for="chile">Chile</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="chile" data-email="atencionciudadana@minrel.gob.cl"><label for="chile">Chile</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="venezuela" data-email="relaciones.consulares@mppre.gob.ve"><label for="venezuela">Venezuela</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="uruguay" data-email="consultas.web@mrree.gub.uy"><label for="uruguay">Uruguay</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="colombia" data-email="contactenos@cancilleria.gov.co"><label for="colombia">Colombia</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="japan" data-email="publicinfo@mofa.go.jp"><label for="japan">Japan</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="japan" data-email="info@mofa.go.jp"><label for="japan">Japan</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="southkorea" data-email="webmaster@mofa.go.kr"><label for="southkorea">South Korea</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="india" data-email="contactus@mea.gov.in"><label for="india">India</label></div>
             </div>
         </form>
     </div>
@@ -210,8 +210,10 @@ Sincerely,
             let bodyElement = document.getElementById('email-body');
             let fullText = bodyElement.innerText || bodyElement.textContent;
             let lines = fullText.split('\n');
-            let subject = lines[0].replace('Subject: ', '');
-            let body = lines.slice(2).join('\n');
+            let subjectLine = lines.find(line => line.trim().startsWith('Subject:'));
+            let subject = subjectLine ? subjectLine.replace('Subject:', '').trim() : 'Formal Request to Reconsider Diplomatic Recognition of the Islamic Republic of Iran';
+            let bodyStart = lines.findIndex(line => line.trim().startsWith('Subject:')) + 1;
+            let body = lines.slice(bodyStart).join('\n').trim();
             return { subject, body };
         }
 
