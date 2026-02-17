@@ -33,7 +33,7 @@
             text-align: center;
             margin: 10px 0 20px;
         }
-        .telegram-note {
+        .telegram-note, .fallback-note {
             background-color: #fffde7;
             border: 1px solid #fff59d;
             padding: 12px;
@@ -117,10 +117,14 @@
 <body>
     <div class="container">
         <h1>Free Iran 2026: Urge Reassessment of Diplomatic Recognition</h1>
-        <p class="center">Select the countries you want, then click "Send to Selected" to open one email addressed to all chosen foreign ministries. (Note: Some ministries prefer contact forms—check their site if emails bounce.)</p>
+        <p class="center">Select the countries you want, then click "Send to Selected" to open one email addressed to all chosen foreign ministries.</p>
         
         <div class="telegram-note">
             <strong>Note for Telegram/Android users:</strong> If the email link doesn't open properly in Telegram's in-app browser, tap the three dots menu at the top of the address bar and select "Open in..." → Chrome (or your default browser).
+        </div>
+        
+        <div class="fallback-note">
+            <strong>Tip:</strong> If the subject or full link doesn't appear correctly in your email client (rare browser/client issue), use "Copy Email Template", create a new email manually, paste the body, set the subject to "Formal Request to Reconsider Diplomatic Recognition of the Islamic Republic of Iran", and add selected emails to To: field.
         </div>
         
         <div style="text-align: center; margin: 20px 0;">
@@ -181,6 +185,11 @@ Richmond Hill, Ontario, Canada
                 <div class="checkbox-item"><input type="checkbox" id="ukraine" data-email="cons_or@mfa.gov.ua"><label for="ukraine">Ukraine</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="netherlands" data-email="inbox@minbuza.nl"><label for="netherlands">Netherlands</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="austria" data-email="post@bmeia.gv.at"><label for="austria">Austria</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="albania" data-email="info@mfa.gov.al"><label for="albania">Albania</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="bulgaria" data-email="info@mfa.bg"><label for="bulgaria">Bulgaria</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="czech" data-email="epodatelna@mzv.cz"><label for="czech">Czech Republic</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="cyprus" data-email="info@mfa.gov.cy"><label for="cyprus">Cyprus</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="iceland" data-email="mfa@mfa.is"><label for="iceland">Iceland</label></div>
             </div>
 
             <h2>Other Countries</h2>
@@ -208,11 +217,11 @@ Richmond Hill, Ontario, Canada
 
         function getEmailTemplate() {
             let bodyElement = document.getElementById('email-body');
-            let fullText = bodyElement.innerText || bodyElement.textContent;
-            let lines = fullText.split('\n');
-            let subjectLine = lines.find(line => line.trim().startsWith('Subject:'));
-            let subject = subjectLine ? subjectLine.replace('Subject:', '').trim() : 'Formal Request to Reconsider Diplomatic Recognition of the Islamic Republic of Iran';
-            let bodyStart = lines.findIndex(line => line.trim().startsWith('Subject:')) + 1;
+            let fullText = bodyElement.innerText.trim() || bodyElement.textContent.trim();
+            let lines = fullText.split('\n').map(line => line.trim());
+            let subjectLine = lines.find(line => line.startsWith('Subject:')) || lines[0];
+            let subject = subjectLine.replace(/^Subject:\s*/i, '').trim();
+            let bodyStart = lines.findIndex(line => line.startsWith('Subject:')) + 1 || 1;
             let body = lines.slice(bodyStart).join('\n').trim();
             return { subject, body };
         }
@@ -247,7 +256,7 @@ Richmond Hill, Ontario, Canada
                 window.getSelection().addRange(range);
                 document.execCommand('copy');
                 window.getSelection().removeAllRanges();
-                alert('Email template copied to clipboard!');
+                alert('Email template (including subject) copied to clipboard!');
             }
         }
     </script>
