@@ -164,7 +164,7 @@ We urge careful and principled consideration.
 Sincerely,
 [Your Name]
 [Your Contact Info]
-[Your Location] – [DYNAMIC TIMESTAMP]
+[Your City and Country of Residence] – [DYNAMIC TIMESTAMP]
         </div>
         
         <form>
@@ -177,13 +177,13 @@ Sincerely,
                 <div class="checkbox-item"><input type="checkbox" id="denmark" data-email="um@um.dk"><label for="denmark">Denmark</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="norway" data-email="post@mfa.no"><label for="norway">Norway</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="finland" data-email="kirjaamo.um@gov.fi"><label for="finland">Finland</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="italy" data-email="segr.caposegr@esteri.it,urp@esteri.it"><label for="italy">Italy</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="italy" data-email="urp@esteri.it"><label for="italy">Italy</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="spain" data-email="informae@maec.es"><label for="spain">Spain</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="portugal" data-email="secgeral@mne.pt"><label for="portugal">Portugal</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="belarus" data-email="mail@mfa.gov.by"><label for="belarus">Belarus</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="poland" data-email="kontakt@msz.gov.pl"><label for="poland">Poland</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="ukraine" data-email="cons_or@mfa.gov.ua"><label for="ukraine">Ukraine</label></div>
-                <div class="checkbox-item"><input type="checkbox" id="netherlands" data-email="DPG@minbuza.nl"><label for="netherlands">Netherlands</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="netherlands" data-email="persvragen@minbuza.nl"><label for="netherlands">Netherlands</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="austria" data-email="post@bmeia.gv.at"><label for="austria">Austria</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="albania" data-email="info@mfa.gov.al"><label for="albania">Albania</label></div>
                 <div class="checkbox-item"><input type="checkbox" id="bulgaria" data-email="info@mfa.bg"><label for="bulgaria">Bulgaria</label></div>
@@ -237,7 +237,7 @@ Sincerely,
             let subject = subjectLine.replace(/^Subject:\s*/i, '').trim();
             let bodyStart = lines.findIndex(line => line.startsWith('Subject:')) + 1 || 1;
             let body = lines.slice(bodyStart).join('\n').trim();
-            // Replace placeholder with dynamic timestamp
+            // Replace placeholders dynamically
             body = body.replace('[DYNAMIC TIMESTAMP]', getCurrentTimestamp());
             return { subject, body };
         }
@@ -272,7 +272,7 @@ Sincerely,
                 window.getSelection().addRange(range);
                 document.execCommand('copy');
                 window.getSelection().removeAllRanges();
-                alert('Email template (including subject) copied to clipboard! Note: Timestamp is dynamic and will update when sending.');
+                alert('Email template (including subject) copied to clipboard! Timestamp is dynamic and updates when sending.');
             }
         }
     </script>
